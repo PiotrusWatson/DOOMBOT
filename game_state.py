@@ -15,7 +15,8 @@ class GameState:
         self.player = Player(doom_session)
 
     def poll(self):
-        pass
+        self.state = self.session.getPlayerState()
+	print(self.state)
 
     def update(self):
         self.player.turn(5)

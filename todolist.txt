@@ -1,4 +1,5 @@
-Refactor into seperate files
+Refactor into seperate files X
 Start updating state - what everything is around us
+basic mathsy
 Make a direct chasebot
 

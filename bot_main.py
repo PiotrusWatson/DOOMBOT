@@ -5,7 +5,7 @@ import time
 
 from session import *
 from player import *
-from state import *
+from game_state import *
 
 """
 Initialises session and handles arg passing, maybe later can do things involving doom client + server
