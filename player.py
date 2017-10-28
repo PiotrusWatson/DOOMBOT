@@ -102,8 +102,8 @@ class Player:
         return (ourRange >= self.getDistanceBtw(self, player))
 
     def shootAt(self, player):
-        turn_to(player)
-        self.player.shoot()
+        self.turn_to(player)
+        self.shoot()
 
     def getNearestPlayer(self, players):
         min = 100000
