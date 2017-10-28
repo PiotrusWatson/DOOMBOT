@@ -68,10 +68,10 @@ class Player:
     """
     def move_to_player(self, other):
         self.move_to(*list(other.get("position").values())[:2] )
-	
-	"""
-	eventually we'll put all the movement logic in here? right now it's spread between here and 
-	game_state THIS IS BAD TODO: NOT HAVE IT DO THAT
+
+    """
+    eventually we'll put all the movement logic in here? right now it's spread between here and 
+    game_state THIS IS BAD TODO: NOT HAVE IT DO THAT
 	"""
     def update(self):
         if (self.forwards):
@@ -79,3 +79,6 @@ class Player:
     
     def updateState(self, state):
         self.state = state
+
+
+	
