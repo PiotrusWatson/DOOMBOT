@@ -1,0 +1,4 @@
+Refactor into seperate files
+Start updating state - what everything is around us
+Make a direct chasebot
+

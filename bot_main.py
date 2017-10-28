@@ -4,6 +4,13 @@ import random as rand
 import time
 
 """
+Initialises session and handles arg passing, maybe later can do things involving doom client + server
+"""
+
+
+
+
+"""
 Holds session information and delegates requests (do ur api calls here)
 """
 class DoomSession:
