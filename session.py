@@ -1,4 +1,5 @@
 import requests
+import json
 
 
 """
@@ -18,11 +19,17 @@ class DoomSession:
         except:
             print("Send Action POST FAILED")
 
-	
-	def getPlayerState(self):
-		try:
-			result = requests.get(self.url+"players")
-			return json.loads(result.data)
-		except:
-			print("GET PLAYERS REQUEST FAILED")
+    
+    def getPlayers(self):
+        try:
+            result = requests.get(self.url+"players")
+        except:
+            print("GET PLAYERS REQUEST FAILED")
+        return json.loads(result.text)
 
+    def getPlayer(self):
+        try:
+            result = requests.get(self.url+"player")
+        except:
+            print("GET PLAYERS REQUEST FAILED")
+        return json.loads(result.text)
