@@ -40,9 +40,9 @@ class Player:
 
         self.session.sendAction({"type": action_type, "amount": abs(amount)})
 
-"""
-turns towards a specific point 
-"""
+    """
+    turns towards a specific point 
+    """
     def turn_to(self, x_move, y_move):
         
         x,y,_ = self.state.get("position", {}).values()
@@ -56,23 +56,22 @@ turns towards a specific point
         
         self.turn(maths.copysign(self.rotateSpeed, turn_angle))
 
-"""
-turns to a specific point _ moves TODO RENAME + MAKE PROPER STRAFES
-"""
-
+    """
+    turns to a specific point _ moves TODO RENAME + MAKE PROPER STRAFES
+    """
     def move_to(self, x,y):
         self.turn_to(x,y)
         self.forwards = True
 
-"""
-GETS ANOTHER PLAYER FROM ??? + TURNS/MOVES
-"""
+    """
+    GETS ANOTHER PLAYER FROM ??? + TURNS/MOVES
+    """
     def move_to_player(self, other):
         self.move_to(*list(other.get("position").values())[:2] )
 
     def update(self):
         if (self.forwards):
-            self.move_y(forwardSpeed)
+            self.move_y(self.forwardSpeed)
     
     def updateState(self, state):
         self.state = state
