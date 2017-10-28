@@ -15,7 +15,7 @@ Initialises session and handles arg passing, maybe later can do things involving
 def main():
     #parser = argparse.ArgumentParser(description="connects a player to a doom rest api session")
     #parser.add_argument("-p")
-    sesh = DoomSession("localhost", "6001")
+    sesh = DoomSession("localhost", "6002")
     state = GameState(sesh)
     
     while(True):
