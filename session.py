@@ -23,6 +23,7 @@ class DoomSession:
     def getPlayers(self):
         try:
             result = requests.get(self.url+"players")
+            #print(result.text)
         except:
             print("GET PLAYERS REQUEST FAILED")
         return json.loads(result.text)

@@ -6,6 +6,7 @@ import sys
 """
 Holds game map + object state and update code (put code you want done each tick here) 
 """
+wepons = [0,0,0,20,0]
 
 class GameState:
     def __init__(self, doom_session):
@@ -25,6 +26,8 @@ class GameState:
         self.players =  [x for x in self.session.getPlayers() if x.get("id", None) != self.player.id]
 
     def update(self):
+        #print("Distance: ", self.player.getDistanceBtw(self.player,self.players[0]))
+        #print("players", self.players)
         self.player.move_to_player(self.players[0])
         self.player.update()
 
