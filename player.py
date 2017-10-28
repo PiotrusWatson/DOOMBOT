@@ -39,10 +39,11 @@ class Player:
 
         self.session.sendAction({"type": action_type, "amount": abs(amount)})
 
-    def turn_to(self, x_move, y_move):
+    def turn_to(self, thing):
         x,y,_ = self.state.get("position", {}).values()
-        
-        turn_angle = self.getangle(x, y, x_move, y_move)
+        x_thing = thing.get("position")["x"]
+        y_thing = thing.get("position")["y"]
+        turn_angle = self.getangle(x, y, x_thing, y_thing)
 
         print("turn angle: " + str(turn_angle) +"\n")
         if (not self.turning):
@@ -50,12 +51,9 @@ class Player:
             self.turning = True
 
 
-    def move_to(self, x,y):
-        self.turn_to(x,y)
+    def move_to(self, other):
+        self.turn_to(other)
         self.forwards = True
-
-    def move_to_player(self, other):
-        self.move_to(*list(other.get("position").values())[:2] )
 
     def update(self):
         if (self.forwards):
@@ -97,5 +95,24 @@ class Player:
         return distance
 
         
+    def inRange(self, player):
+        ranges = [50,50,1500,1500,0,0,0,0]
+        weaponIndex = self.state.get("weapon")
+        ourRange = ranges[weaponIndex]
+        return (ourRange >= self.getDistanceBtw(self, player))
 
+    def shootAt(self, player):
+        turn_to(player)
+        self.player.shoot()
+
+    def getNearestPlayer(self, players):
+        min = 100000
+        i= 0
+        for otherPlayer in players:
+            distance = self.getDistanceBtw(self,otherPlayer)
+            if  distance < min:
+                min = distance
+                nearest = players[i]
+            i = i + 1
+        return nearest
    
