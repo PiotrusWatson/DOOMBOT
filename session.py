@@ -15,11 +15,10 @@ class DoomSession:
     def sendAction(self, action):
         try:
             requests.post(self.url+"player/actions", json=action)
-            print(action)
-        except:
-            print("Send Action POST FAILED")
+        except Exception as e:
+            print(e)
 
-    
+
     def getPlayers(self):
         try:
             result = requests.get(self.url+"players")
@@ -33,4 +32,12 @@ class DoomSession:
             result = requests.get(self.url+"player")
         except:
             print("GET PLAYERS REQUEST FAILED")
+        return json.loads(result.text)
+
+    def getObjects(self):
+        try:
+            result = requests.get(self.url+"world/objects")
+        except Exception as e:
+            print(e)
+
         return json.loads(result.text)
