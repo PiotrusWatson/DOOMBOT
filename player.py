@@ -41,7 +41,7 @@ class Player:
     def turn_to(self, x_move, y_move):
         x,y,_ = self.state.get("position", {}).values()
 
-        print(f"X: {x_move}, Y: {y_move}\n\n")
+        #print(f"X: {x_move}, Y: {y_move}\n\n")
         angle = maths.degrees(maths.atan2(y_move-y , x_move-x)) 
         angle = angle if angle >= 0 else angle + 360
 
