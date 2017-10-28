@@ -18,7 +18,7 @@ class GameState:
 
         self.player.id = self.player.state.get("id",None)
 
-
+	
     def poll(self):
         self.player.state = self.session.getPlayer()
 

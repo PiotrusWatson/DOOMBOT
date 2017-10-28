@@ -1,0 +1,8 @@
+Refactor into seperate files X
+Start updating state - what everything is around us KINDA - did with other players
+basic mathsy KINDA
+Make a direct chasebot X
+Make funct to get all other objects 
+Design strafe code
+
+
