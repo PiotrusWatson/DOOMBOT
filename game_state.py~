@@ -27,20 +27,17 @@ class GameState:
         self.objects = self.session.getObjects()
 
     def update(self):
-        if((self.players is not None) ): #and rand.randint(0, 10)==0
+        if((self.players is not None) and rand.randint(0, 60)==0):
             nearestPlayer = self.player.getNearestPlayer(self.players)
             print("Distance: ", self.player.getDistanceBtw(self.player,nearestPlayer))
             #print("players", self.players)
 
 
             self.player.move_to(nearestPlayer)
-            if(self.player.getDistanceBtw(self.player,nearestPlayer) < 1500):
-                self.player.shootAt(nearestPlayer)
-            """
+
             if (self.player.inRange(nearestPlayer)):
                 print ("inside if inRange")
                 self.player.shootAt(nearestPlayer)
-            """
 
         def getObjectsByType(self, type):
             objcollection = []

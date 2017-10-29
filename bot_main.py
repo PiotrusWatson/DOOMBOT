@@ -22,7 +22,7 @@ def main():
     while(True):
         state.poll()
         state.update()
-        time.sleep(1/7)
+        time.sleep(1/30)
 
 
 main()

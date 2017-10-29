@@ -18,7 +18,12 @@ class DoomSession:
         except Exception as e:
             print(e)
 
-
+    def sendTurn(self, action):
+        try:
+            x = requests.post(self.url+"player/turn", json=action)
+            #print(x.content)
+        except Exception as e:
+            print(e)
     def getPlayers(self):
         try:
             result = requests.get(self.url+"players")
