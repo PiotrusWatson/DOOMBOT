@@ -97,11 +97,22 @@ class Player:
         """
 
 
+    def getDistanceBtwShotgun(self, object1, object2):
+        x1 = object1.state.get("position")["x"]
+        y1 = object1.state.get("position")["x"]
+        x2 = object2.get("position")["x"]
+        y2 = object2.get("position")["y"]
+        """
+        z1,x1,y1 = object1.state.get("position", {}).values()
+        z2,x2,y2 = object2.get("position", {}).values()
+        """
+        return self.getDistance(x1, y1, x2, y2)
+
     def getDistanceBtw(self, object1, object2):
+
         z1,x1,y1 = object1.state.get("position", {}).values()
         z2,x2,y2 = object2.get("position", {}).values()
         return self.getDistance(x1, y1, x2, y2)
-
 
     def getDistance(self, x1, y1, x2, y2):
         x_diff = x2 - x1
